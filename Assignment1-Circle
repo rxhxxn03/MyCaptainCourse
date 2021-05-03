@@ -1,0 +1,4 @@
+import math
+r = float(input("radius of circle = "))
+
+print(math.pi * r ** 2)
