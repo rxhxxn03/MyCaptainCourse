@@ -1,0 +1,3 @@
+fn = str(input("file name = "))
+py= ".py"
+print(fn,py)
