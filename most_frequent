@@ -1,0 +1,10 @@
+def most_frequent(string = "mississippi"):
+    LN = {}
+    for m in string:
+        if m in LN:
+            LN[m] += 1
+        else:
+            LN[m] = 1
+    print(LN)
+
+most_frequent()
