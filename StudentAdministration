@@ -1,0 +1,46 @@
+import csv
+
+def write_into_csv(info_list):
+    with open("student_info.csv" , "a", newline='' ) as csv_file:
+            writer = csv.writer(csv_file)
+
+            if csv_file.tell() == 0:
+                writer.writerow(["Name" , "Age" , "Contact Number" , "Email"])
+
+
+            writer.writerow(info_list)
+
+
+def func_userinput():
+    while True:
+        user_input = input('Do you want to enter a record?:')
+        if user_input.lower() == 'yes' or user_input.lower() == 'no' or user_input.lower() == 'done':
+            break
+        else:
+            print('Error no such command!')
+    return user_input
+
+
+condition = True
+
+student_num = 1
+
+
+
+
+while condition:
+    user = func_userinput()
+    
+    if user == 'yes':
+        student_Info = input("enter information for student #{} : ".format(student_num))
+        condition = True
+        student_num = student_num + 1
+    elif user == 'no':
+        condition = False
+
+student_record = student_Info.split(' ')
+
+print("\nThe entered information is-\n Name:{}\n Age: {}\n Contact Number: {}\n E-mail ID: {}\n"
+        .format(student_record[0], student_record[1], student_record[2], student_record[3]))
+
+write_into_csv(student_record)
